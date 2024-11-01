@@ -2,80 +2,188 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1; /* Change the background color of the page */
+    background-color: #cccccc;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    width: 100%;
+    max-width: 400px; /* Adjusted to match the largest container */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.login-form,
-.social-icons {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.form-container {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    padding: 30px; /* Adjusted for consistency */
+    box-sizing: border-box;
 }
 
-.social-icons {
-    margin-right: 20px;
-    height: fit-content;
+.title {
+    text-align: center;
+    font-family: "Lucida Sans", sans-serif;
+    margin: 0 0 30px 0;
+    font-size: 28px; /* Kept the larger title size */
+    font-weight: 800; /* Kept the bold weight */
+    color: #333;
 }
 
-.social-icons {
+#loginForm, #registrationForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"],
-.login-form input[type="email"],
-.login-form button {
+.input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Include padding and border in the width */
+    padding: 12px 15px;
+    border-radius: 8px; /* Unified border radius */
+    border: 1px solid #ddd; /* Unified border color */
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s; /* Added transition for focus effect */
 }
 
-.login-form button {
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
+.input:focus {
+    border-color: teal; /* Unified focus color */
+}
+
+.error-message {
+    color: #dc3545; /* Error message color */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.page-link {
+    text-align: right;
+}
+
+.page-link-label {
+    color: #747474;
     cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
 }
 
-.login-form p {
-    margin-top: 10px;
+.form-btn {
+    padding: 12px; /* Unified padding */
+    border-radius: 8px; /* Consistent border radius */
+    border: none;
+    background-color: #4A90E2; /* Primary button color */
+    color: white;
+    cursor: pointer;
+    font-size: 16px; /* Increased font size for buttons */
+    font-weight: 500;
+    transition: background-color 0.3s;
 }
 
-.login-form a {
-    color: #4CAF50;
-    text-decoration: none;
+.form-btn:hover {
+    background-color: #357ABD; /* Hover state for primary button */
 }
 
-.social-icons h2 {
-    margin-bottom: 20px;
+.sign-up-label, .sign-up-link {
+    text-align:center;
+    margin-top :20px;
+    font-size :14px;
+    color :#666;
 }
 
-.social-icons a {
-    display: inline-block;
-    margin: 5px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #4CAF50;
-    color: #fff;
-    text-align: center;
-    line-height: 40px;
-    text-decoration: none;
+.sign-up-link {
+    color:#4A90E2;
+    text-decoration:none;
+    font-weight :500;
 }
 
-.user-email {
-    font-size: 15px !important;
+.sign-up-link:hover {
+    text-decoration :underline;
+}
+
+.buttons-container {
+    display:flex;
+    flex-direction :column;
+    gap :10px;
+}
+
+.apple-login-button,
+.google-login-button {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap :10px;
+    padding :12px;
+    border-radius :20px;
+    cursor:pointer;
+    font-size :14px;
+    font-weight :500;
+    transition :background-color .3s;
+}
+
+.apple-login-button {
+    background-color:#000;
+    color:white;
+}
+
+.apple-login-button:hover {
+    background-color:#333;
+}
+
+.google-login-button {
+    background-color:#fff;
+    border :1px solid #ddd;
+    color:#333;
+}
+
+.google-login-button:hover {
+    background-color:#f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width :768px) {
+    .container {
+        flex-direction :column;
+    }
+
+    .social-icons {
+        margin-right :0;
+        margin-bottom :20px;
+    }
+}
+
+/* Loading and Toast Styles */
+.loading {
+    opacity :0.7;
+    pointer-events:none ;
+}
+
+.toast {
+    position :fixed ;
+    top :20px ;
+    right :20px ;
+    padding :15px ;
+    border-radius :4px ;
+    color:white ;
+    opacity :0 ;
+    transition :opacity .3s ;
+}
+
+.toast.success {
+    background-color:#28a745 ;
+}
+
+.toast.error {
+    background-color:#dc3545 ;
+}
+
+.toast.show {
+    opacity :1 ;
 }
