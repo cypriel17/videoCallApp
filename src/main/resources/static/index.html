@@ -3,29 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connected Users</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Meeting App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<div class="container">
-    <div class="image-container">
-        <img src="https://images.idgesg.net/images/article/2020/04/zoom_video_conferencing_online_meeting_remote_workers_one_user_connected_via_laptop_with_a_grid_of_twelve_participants_on_screen_2400x1600-100837446-large.jpg?auto=webp&quality=85,70" alt="Image">
-    </div>
+<header>
+    <div id="timeDate" class="time-date"></div>
+</header>
 
+<div class="container">
     <div class="main">
+        <h1>Video calls and meetings for everyone</h1>
+        <p>Connect, collaborate and celebrate from anywhere with our Meeting App</p>
+
         <div class="new-meeting">
-            <button id="newMeetingBtn">Create a New Meeting</button>
+            <button id="newMeetingBtn"><i class="fa fa-video-camera"></i> New Meeting</button>
             <div class="join-meeting">
-                <input type="text" placeholder="Meeting ID" id="meetingName">
+                <input type="text" placeholder="Enter a code or link" id="meetingName">
                 <button id="joinMeetingBtn">Join</button>
             </div>
         </div>
+
+        <hr>
+
         <div class="connected-users">
-            <button id="logoutBtn">Logout</button>
             <h2>Connected Users</h2>
             <ul id="userList"></ul>
+            <button id="logoutBtn">Logout</button>
         </div>
     </div>
 </div>
